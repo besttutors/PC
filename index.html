@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PCBanao.in — India's PC Builder Guide 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0C10;
+  --bg2:#0F1117;
+  --bg3:#141720;
+  --card:#161B26;
+  --card2:#1C2130;
+  --border:#252B3A;
+  --border2:#2E3650;
+  --accent:#FF5722;
+  --accent2:#FF8A50;
+  --blue:#3B82F6;
+  --green:#22C55E;
+  --yellow:#F59E0B;
+  --red:#EF4444;
+  --purple:#8B5CF6;
+  --teal:#14B8A6;
+  --text:#E8EAF0;
+  --text2:#9BA3B8;
+  --text3:#6B7490;
+  --r:14px;--rs:8px;
+  --glow: 0 0 30px rgba(255,87,34,0.15);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* ──── NOISE TEXTURE ──── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4}
+
+/* ──── SCROLLBAR ──── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+/* ──── NAV ──── */
+nav{position:sticky;top:0;z-index:999;background:rgba(10,12,16,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 1.5rem;gap:1rem}
+.logo{font-family:'Rajdhani',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:1px;color:var(--text)}
+.logo .hi{color:var(--accent)}
+.logo sub{font-size:0.55rem;color:var(--text3);font-family:'Space Grotesk',sans-serif;font-weight:400;letter-spacing:0;vertical-align:middle;margin-left:4px}
+.nav-links{display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--text3);font-size:0.72rem;font-weight:500;padding:0.3rem 0.7rem;border-radius:6px;white-space:nowrap;letter-spacing:0.5px;text-transform:uppercase;text-decoration:none;transition:all 0.2s}
+.nav-links a:hover{color:var(--accent);background:rgba(255,87,34,0.08)}
+.nav-badge{background:var(--accent);color:#fff;font-size:0.62rem;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:0.5px}
+
+/* ──── HERO ──── */
+.hero{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden;padding:5rem 1.5rem 3rem}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.3;pointer-events:none}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(255,87,34,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:auto;width:100%;position:relative;z-index:1}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,87,34,0.1);border:1px solid rgba(255,87,34,0.3);padding:6px 14px;border-radius:20px;font-size:0.72rem;font-weight:600;color:var(--accent2);letter-spacing:1px;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp 0.6s ease both}
+.hero-label span{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:700;line-height:1.0;margin-bottom:1.5rem;animation:fadeUp 0.6s 0.1s ease both}
+.hero h1 .line1{display:block;color:var(--text)}
+.hero h1 .line2{display:block;color:var(--accent);text-shadow:0 0 60px rgba(255,87,34,0.4)}
+.hero h1 .line3{display:block;color:var(--text2)}
+.hero-sub{font-size:1rem;color:var(--text2);max-width:560px;margin-bottom:2.5rem;animation:fadeUp 0.6s 0.2s ease both;line-height:1.7}
+.hero-chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:3rem;animation:fadeUp 0.6s 0.3s ease both}
+.hchip{display:inline-flex;align-items:center;gap:6px;padding:0.5rem 1.1rem;border:1px solid var(--border2);border-radius:8px;font-size:0.78rem;font-weight:500;color:var(--text2);cursor:pointer;transition:all 0.25s;background:var(--card)}
+.hchip:hover{border-color:var(--accent);color:var(--accent);background:rgba(255,87,34,0.06);transform:translateY(-2px)}
+.hchip .ic{font-size:1rem}
+.hero-stats{display:flex;gap:2.5rem;animation:fadeUp 0.6s 0.4s ease both;flex-wrap:wrap}
+.hstat .num{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1}
+.hstat .lbl{font-size:0.72rem;color:var(--text3);margin-top:2px;letter-spacing:0.5px}
+
+/* ──── BUILDER TOOL ──── */
+.builder-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.builder-inner{max-width:1200px;margin:auto;padding:4rem 1.5rem}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem}
+.sec-tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);background:rgba(255,87,34,0.1);padding:3px 10px;border-radius:4px}
+.sec-title{font-family:'Rajdhani',sans-serif;font-size:1.9rem;font-weight:700;color:var(--text);margin-bottom:0.3rem}
+.sec-title .hl{color:var(--accent)}
+.sec-sub{font-size:0.85rem;color:var(--text3);margin-bottom:2rem}
+
+/* BUILDER QUIZ */
+.quiz-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.quiz-progress{height:3px;background:var(--border);position:relative}
+.quiz-bar{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.4s ease;border-radius:3px}
+.quiz-step{padding:2rem;display:none}
+.quiz-step.active{display:block}
+.quiz-q{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+.quiz-hint{font-size:0.78rem;color:var(--text3);margin-bottom:1.5rem}
+.quiz-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.8rem}
+.qopt{padding:1rem;border:1.5px solid var(--border);border-radius:var(--rs);cursor:pointer;transition:all 0.22s;background:var(--bg2);text-align:center}
+.qopt:hover{border-color:var(--accent);background:rgba(255,87,34,0.06);transform:translateY(-2px)}
+.qopt.sel{border-color:var(--accent);background:rgba(255,87,34,0.1);box-shadow:0 0 0 1px rgba(255,87,34,0.3)}
+.qopt .qi{font-size:2rem;margin-bottom:6px}
+.qopt .qt{font-size:0.82rem;font-weight:600;color:var(--text)}
+.qopt .qs{font-size:0.72rem;color:var(--text3);margin-top:3px}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);background:var(--bg2)}
+.btn-nav{padding:0.6rem 1.6rem;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;border:1.5px solid var(--border);color:var(--text2);background:transparent;font-family:'Space Grotesk',sans-serif}
+.btn-nav.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-nav:hover{border-color:var(--accent);color:var(--accent)}
+.btn-nav.primary:hover{background:#e04e1e;box-shadow:0 0 20px rgba(255,87,34,0.35)}
+.quiz-steps-ind{display:flex;gap:6px}
+.sind{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all 0.3s}
+.sind.done{background:var(--accent)}
+.sind.active{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+/* BUILD RESULT */
+.build-result{display:none;padding:2rem}
+.build-result.show{display:block}
+.result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.result-title{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700}
+.result-title .badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.result-price{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--green)}
+.parts-grid{display:grid;gap:0.6rem}
+.part-row{display:grid;grid-template-columns:100px 1fr auto;gap:1rem;align-items:center;padding:0.9rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);transition:border-color 0.2s}
+.part-row:hover{border-color:var(--border2)}
+.part-cat{font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
+.part-name{font-size:0.88rem;font-weight:600;color:var(--text)}
+.part-why{font-size:0.72rem;color:var(--text3);margin-top:2px}
+.part-price{font-family:'JetBrains Mono',monospace;font-size:0.88rem;font-weight:500;color:var(--accent2);text-align:right;white-space:nowrap}
+.result-notes{margin-top:1.5rem;padding:1rem 1.2rem;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:var(--rs);font-size:0.8rem;color:var(--text2);line-height:1.8}
+.reset-btn{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;padding:0.5rem 1.2rem;border:1px solid var(--border);border-radius:8px;font-size:0.78rem;color:var(--text3);cursor:pointer;transition:all 0.2s;background:transparent;font-family:'Space Grotesk',sans-serif}
+.reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ──── SECTION WRAPPER ──── */
+.sec-wrap{max-width:1200px;margin:auto;padding:4rem 1.5rem}
+
+/* ──── COMPONENT CARDS ──── */
+.comp-section{padding:0;border-bottom:1px solid var(--border)}
+.comp-section:nth-child(odd){background:var(--bg)}
+.comp-section:nth-child(even){background:var(--bg2)}
+
+/* ──── CPU SECTION ──── */
+.cpu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.cpu-grid{grid-template-columns:1fr}}
+.cpu-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
+.cpu-brand-head{padding:1.2rem 1.5rem;display:flex;align-items:center;gap:12px}
+.cpu-brand-head .brand-name{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700}
+.cpu-brand-head .brand-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700}
+.intel-card .cpu-brand-head{background:linear-gradient(135deg,#0055B3,#0077E6)}
+.amd-card .cpu-brand-head{background:linear-gradient(135deg,#CC0000,#ED1C24)}
+.cpu-tiers{padding:1rem;background:var(--card);display:flex;flex-direction:column;gap:0.5rem}
+.cpu-tier{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;background:var(--bg2);border-radius:var(--rs);border:1px solid var(--border);transition:all 0.2s}
+.cpu-tier:hover{border-color:var(--border2)}
+.tier-label{font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:3px}
+.tier-name{font-size:0.85rem;font-weight:600;color:var(--text)}
+.tier-spec{font-size:0.72rem;color:var(--text3)}
+.tier-price{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--accent2);text-align:right;white-space:nowrap}
+.tier-best{border-color:var(--accent)!important;background:rgba(255,87,34,0.05)!important}
+.rec-badge{display:inline-block;font-size:0.62rem;font-weight:700;background:var(--accent);color:#fff;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.cpu-compare-bar{margin-top:0.4rem}
+.cbar{height:4px;border-radius:2px;background:var(--border)}
+.cbar-fill{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+/* ──── RAM SECTION ──── */
+.ram-timeline{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.ram-row{display:grid;grid-template-columns:70px 1fr 120px 110px;gap:1rem;align-items:center;padding:1rem 1.2rem;border-bottom:1px solid var(--border);background:var(--card);transition:background 0.2s}
+.ram-row:last-child{border-bottom:none}
+.ram-row:hover{background:var(--card2)}
+.ram-gen{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700}
+.ram-bar{height:6px;background:var(--border);border-radius:3px;position:relative;overflow:hidden;margin-top:4px}
+.ram-fill{height:6px;border-radius:3px;position:absolute;left:0;top:0}
+.ram-label{font-size:0.72rem;color:var(--text3);margin-top:4px}
+.ram-speed{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text2)}
+.ram-price{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text3);text-align:right}
+.ram-row.current{background:rgba(59,130,246,0.06)!important;border-left:3px solid var(--blue)}
+.ram-row.latest{background:rgba(255,87,34,0.05)!important;border-left:3px solid var(--accent)}
+.ram-tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem;margin-top:1rem}
+.rtip{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:1rem}
+.rtip-icon{font-size:1.5rem;margin-bottom:6px}
+.rtip h4{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.rtip p{font-size:0.75rem;color:var(--text3);line-height:1.6}
+
+/* ──── STORAGE SECTION ──── */
+.storage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all 0.25s}
+.sc:hover{border-color:var(--border2);transform:translateY(-3px)}
+.sc.featured{border-color:var(--accent)}
+.sc-head{padding:1.2rem;border-bottom:1px solid var(--border)}
+.sc-type{font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.sc-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:8px}
+.sc-speed{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:500;color:var(--accent)}
+.sc-speed span{font-size:0.7rem;color:var(--text3);font-family:'Space Grotesk',sans-serif}
+.sc-bar{height:6px;background:var(--border);border-radius:3px;margin-top:8px;overflow:hidden}
+.sc-fill{height:6px;border-radius:3px}
+.sc-body{padding:1rem 1.2rem}
+.sc-body p{font-size:0.78rem;color:var(--text3);line-height:1.6;margin-bottom:8px}
+.sc-price{font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:500;color:var(--text2)}
+.sc-badge{display:inline-block;font-size:0.62rem;font-weight:700;letter-spacing:0.5px;padding:2px 8px;border-radius:4px;margin-bottom:6px}
+
+/* ──── MOTHERBOARD SECTION ──── */
+.mb-tabs{display:flex;gap:0.5rem;margin-bottom:1.2rem}
+.mb-tab{padding:0.4rem 1rem;border-radius:6px;border:1.5px solid var(--border);font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.2s;background:transparent;color:var(--text3);font-family:'Space Grotesk',sans-serif}
+.mb-tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.mb-panel{display:none}
+.mb-panel.on{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem}
+.mbc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all 0.2s}
+.mbc:hover{border-color:var(--border2)}
+.mbc.best{border-color:var(--blue)}
+.mb-head{padding:0.8rem 1rem;font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff}
+.mb-body{padding:0.8rem 1rem;display:flex;flex-direction:column;gap:4px}
+.mb-row{display:flex;justify-content:space-between;font-size:0.75rem;padding:3px 0;border-bottom:1px solid var(--border)}
+.mb-row:last-child{border-bottom:none}
+.mb-row .k{color:var(--text3)}
+.mb-row .v{font-weight:600;color:var(--text)}
+.best-chip{display:inline-block;font-size:0.6rem;font-weight:700;background:var(--blue);color:#fff;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+
+/* ──── PSU SECTION ──── */
+.psu-table{border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.psu-head{display:grid;grid-template-columns:130px 100px 1fr 110px 120px;gap:1rem;padding:0.8rem 1.2rem;background:var(--card2);border-bottom:1px solid var(--border)}
+.psu-head span{font-size:0.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
+.psu-row{display:grid;grid-template-columns:130px 100px 1fr 110px 120px;gap:1rem;align-items:center;padding:0.8rem 1.2rem;border-bottom:1px solid var(--border);background:var(--card);transition:background 0.2s}
+.psu-row:last-child{border-bottom:none}
+.psu-row:hover{background:var(--card2)}
+.psu-row.best-row{background:rgba(34,197,94,0.06)!important;border-left:3px solid var(--green)}
+.psu-rating{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700}
+.psu-eff{font-family:'JetBrains Mono',monospace;font-size:0.8rem}
+.psu-brands{font-size:0.78rem;color:var(--text3)}
+.psu-price{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text2)}
+.psu-rec span{display:inline-block;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:4px}
+.badge-green{background:rgba(34,197,94,0.15);color:var(--green)}
+.badge-blue{background:rgba(59,130,246,0.15);color:var(--blue)}
+.badge-yellow{background:rgba(245,158,11,0.15);color:var(--yellow)}
+.badge-red{background:rgba(239,68,68,0.15);color:var(--red)}
+.badge-gray{background:rgba(107,116,144,0.15);color:var(--text3)}
+.badge-orange{background:rgba(255,87,34,0.15);color:var(--accent)}
+.watt-guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.8rem;margin-top:1rem}
+.watt-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:1rem}
+.watt-card h4{font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:6px}
+.watt-card p{font-size:0.75rem;color:var(--text3);line-height:1.6}
+
+/* ──── CABINET ──── */
+.cab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.cab-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:all 0.25s}
+.cab-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.cab-card.rec{border-color:var(--accent)}
+.cab-icon{font-size:2rem;margin-bottom:8px}
+.cab-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.cab-form{font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.cab-price{font-family:'JetBrains Mono',monospace;font-size:0.9rem;font-weight:500;color:var(--accent2);margin-bottom:8px}
+.cab-desc{font-size:0.76rem;color:var(--text3);line-height:1.6}
+.cab-brands{margin-top:8px;font-size:0.72rem;color:var(--text3)}
+.cab-brands strong{color:var(--text2)}
+
+/* ──── GPU SECTION ──── */
+.gpu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem}
+.gpu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all 0.2s}
+.gpu-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.gpu-head{padding:0.8rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.gpu-name{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text)}
+.gpu-vram{font-size:0.72rem;font-weight:700;padding:2px 7px;border-radius:4px}
+.gpu-body{padding:0 1rem 1rem}
+.gpu-bar-wrap{margin-bottom:8px}
+.gpu-bar-label{display:flex;justify-content:space-between;font-size:0.68rem;color:var(--text3);margin-bottom:3px}
+.gpu-bar{height:5px;background:var(--border);border-radius:2px;overflow:hidden}
+.gpu-bar-fill{height:5px;border-radius:2px}
+.gpu-price{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:500;color:var(--accent2);margin-top:8px}
+.gpu-use{font-size:0.72rem;color:var(--text3);margin-top:3px}
+
+/* ──── SHOPS / MARKETS ──── */
+.shops-section{background:var(--bg)}
+.city-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.city-tab{display:flex;align-items:center;gap:6px;padding:0.5rem 1.1rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s;background:var(--card);color:var(--text3)}
+.city-tab:hover{border-color:var(--accent);color:var(--accent)}
+.city-tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.city-panel{display:none}
+.city-panel.on{display:block}
+.city-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1.2rem}
+.city-name{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.5rem}
+.city-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.cmeta{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;padding:3px 10px;border-radius:4px;background:var(--bg2);border:1px solid var(--border);color:var(--text3)}
+.city-tips{list-style:none;display:flex;flex-direction:column;gap:6px}
+.city-tips li{font-size:0.82rem;color:var(--text2);padding-left:1.2rem;position:relative;line-height:1.6}
+.city-tips li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+.city-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+@media(max-width:500px){.city-2col{grid-template-columns:1fr}}
+.c2{border-radius:var(--rs);padding:1rem;font-size:0.8rem;line-height:1.7}
+.shops-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.8rem}
+.shop-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:all 0.2s}
+.shop-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.shop-card.verified{border-color:var(--green)}
+.shop-name{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:3px}
+.shop-loc{font-size:0.72rem;color:var(--text3);margin-bottom:8px}
+.shop-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.shop-tag{font-size:0.65rem;font-weight:600;padding:1px 7px;border-radius:4px}
+.shop-note{font-size:0.75rem;color:var(--text3);line-height:1.5}
+.verified-badge{display:inline-flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:700;color:var(--green);margin-bottom:6px}
+
+/* ──── ASSEMBLY STEPS ──── */
+.steps-list{display:flex;flex-direction:column;gap:0;position:relative}
+.steps-list::before{content:'';position:absolute;left:26px;top:0;bottom:0;width:1px;background:var(--border);z-index:0}
+.step-item{display:grid;grid-template-columns:52px 1fr;gap:1rem;padding:1.5rem 0;position:relative;z-index:1}
+.step-num{width:52px;height:52px;border-radius:12px;background:var(--card2);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:var(--accent);flex-shrink:0}
+.step-content h4{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.step-content p{font-size:0.82rem;color:var(--text3);line-height:1.7}
+.step-content .tip{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:0.75rem;color:var(--yellow);background:rgba(245,158,11,0.08);padding:4px 10px;border-radius:4px;border:1px solid rgba(245,158,11,0.2)}
+
+/* ──── ONLINE STORES ──── */
+.online-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.online-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:all 0.2s}
+.online-card:hover{border-color:var(--border2)}
+.online-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.online-url{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--blue);margin-bottom:8px}
+.online-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.online-note{font-size:0.75rem;color:var(--text3);line-height:1.5}
+
+/* ──── INFO BOX ──── */
+.infobox{padding:1rem 1.2rem;border-radius:var(--rs);margin-top:1rem;font-size:0.82rem;line-height:1.8}
+.infobox.warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);color:var(--text2)}
+.infobox.info{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:var(--text2)}
+.infobox.tip{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);color:var(--text2)}
+.infobox strong{color:var(--text)}
+
+/* ──── FOOTER ──── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 1.5rem;text-align:center}
+.footer-inner{max-width:1200px;margin:auto}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.5rem}
+.footer-logo .hi{color:var(--accent)}
+.footer-sub{font-size:0.8rem;color:var(--text3);margin-bottom:1.5rem;line-height:1.8}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-links a{font-size:0.75rem;color:var(--text3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-disc{font-size:0.72rem;color:var(--text3);opacity:0.6;line-height:1.7;max-width:500px;margin:auto}
+
+/* ──── ANIMATIONS ──── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes shimmer{0%{left:-100%}100%{left:100%}}
+
+/* ──── MOBILE ──── */
+@media(max-width:768px){
+  .psu-head,.psu-row{grid-template-columns:100px 80px 1fr 80px;font-size:0.72rem}
+  .psu-head span:nth-child(3),.psu-row .psu-brands{display:none}
+  .ram-row{grid-template-columns:60px 1fr 90px}
+  .ram-row .ram-price{display:none}
+  .hero h1{font-size:2.5rem}
+}
+@media(max-width:500px){
+  .part-row{grid-template-columns:80px 1fr;gap:0.5rem}
+  .part-price{grid-column:2}
+}
+
+/* ──── DIVIDER ──── */
+.section-divider{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.divider-line{border:none;border-top:1px solid var(--border);margin:0}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">PC<span class="hi">Banao</span><sub>India</sub></div>
+    <div class="nav-links">
+      <a href="#builder">🛠️ PC Builder</a>
+      <a href="#cpu">CPU</a>
+      <a href="#gpu">GPU</a>
+      <a href="#ram">RAM</a>
+      <a href="#storage">Storage</a>
+      <a href="#motherboard">Motherboard</a>
+      <a href="#psu">PSU</a>
+      <a href="#cabinet">Cabinet</a>
+      <a href="#shops">Shops</a>
+      <a href="#assemble">Assembly</a>
+    </div>
+    <div class="nav-badge">2025</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-label"><span></span> India's Most Complete PC Building Guide 2025</div>
+    <h1>
+      <span class="line1">Build Your</span>
+      <span class="line2">Dream PC</span>
+      <span class="line3">in India — the Right Way</span>
+    </h1>
+    <p class="hero-sub">From CPU to cabinet, budget to flagship — every part explained in plain language with real India prices. Find genuine shops in Delhi, Mumbai, Bengaluru, Hyderabad, Pune & more.</p>
+    <div class="hero-chips">
+      <div class="hchip" onclick="scrollTo('builder')"><span class="ic">🛠️</span> Smart PC Builder</div>
+      <div class="hchip" onclick="scrollTo('cpu')"><span class="ic">🔧</span> CPU Guide</div>
+      <div class="hchip" onclick="scrollTo('gpu')"><span class="ic">🎮</span> GPU Guide</div>
+      <div class="hchip" onclick="scrollTo('shops')"><span class="ic">🏪</span> Physical Stores</div>
+      <div class="hchip" onclick="scrollTo('assemble')"><span class="ic">🔩</span> Assembly Steps</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num">6+</div><div class="lbl">Major Cities</div></div>
+      <div class="hstat"><div class="num">50+</div><div class="lbl">Verified Shops</div></div>
+      <div class="hstat"><div class="num">₹25K–₹2L</div><div class="lbl">Budget Range</div></div>
+      <div class="hstat"><div class="num">2025</div><div class="lbl">Updated Prices</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ BUILDER TOOL ══════════════ -->
+<div class="builder-section" id="builder">
+  <div class="builder-inner">
+    <div class="sec-tag">STEP-BY-STEP</div>
+    <div class="sec-title">🛠️ Smart PC <span class="hl">Builder</span></div>
+    <p class="sec-sub">Answer 4 questions — get a custom PC build with parts + prices tailored for you.</p>
+
+    <div class="quiz-wrap">
+      <div class="quiz-progress"><div class="quiz-bar" id="qbar" style="width:25%"></div></div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" id="qs1">
+        <div class="quiz-q">What will you mainly use this PC for?</div>
+        <div class="quiz-hint">Choose the primary use — you can do multiple things on any build</div>
+        <div class="quiz-opts">
+          <div class="qopt" onclick="sel(this,'use','office')"><div class="qi">💼</div><div class="qt">Office / Study</div><div class="qs">Documents, video calls, email, browser</div></div>
+          <div class="qopt" onclick="sel(this,'use','coding')"><div class="qi">💻</div><div class="qt">Coding / Dev</div><div class="qs">IDEs, Docker, web servers, Android Studio</div></div>
+          <div class="qopt" onclick="sel(this,'use','gaming')"><div class="qi">🎮</div><div class="qt">Gaming</div><div class="qs">AAA titles, esports, streaming gameplay</div></div>
+          <div class="qopt" onclick="sel(this,'use','content')"><div class="qi">🎬</div><div class="qt">Content Creation</div><div class="qs">Video editing, 3D, Photoshop, AI/ML</div></div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" id="qs2">
+        <div class="quiz-q">What's your total budget?</div>
+        <div class="quiz-hint">Including all components — no monitor/keyboard/mouse</div>
+        <div class="quiz-opts">
+          <div class="qopt" onclick="sel(this,'budget','25-40k')"><div class="qi">💚</div><div class="qt">₹25,000 – ₹40,000</div><div class="qs">Entry-level, great value</div></div>
+          <div class="qopt" onclick="sel(this,'budget','40-65k')"><div class="qi">💙</div><div class="qt">₹40,000 – ₹65,000</div><div class="qs">Mid-range, sweet spot</div></div>
+          <div class="qopt" onclick="sel(this,'budget','65-1L')"><div class="qi">🧡</div><div class="qt">₹65,000 – ₹1,00,000</div><div class="qs">High-end, future-proof</div></div>
+          <div class="qopt" onclick="sel(this,'budget','1L+')"><div class="qi">💛</div><div class="qt">₹1,00,000+</div><div class="qs">Workstation / enthusiast</div></div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" id="qs3">
+        <div class="quiz-q">Which brand/platform do you prefer?</div>
+        <div class="quiz-hint">Both are excellent — just a preference question</div>
+        <div class="quiz-opts">
+          <div class="qopt" onclick="sel(this,'brand','intel')"><div class="qi">🔵</div><div class="qt">Intel</div><div class="qs">Great single-core, gaming focused</div></div>
+          <div class="qopt" onclick="sel(this,'brand','amd')"><div class="qi">🔴</div><div class="qt">AMD Ryzen</div><div class="qs">More cores, power efficient, great value</div></div>
+          <div class="qopt" onclick="sel(this,'brand','no')"><div class="qi">🤷</div><div class="qt">No Preference</div><div class="qs">Pick the best value for me</div></div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="quiz-step" id="qs4">
+        <div class="quiz-q">Do you need a dedicated GPU?</div>
+        <div class="quiz-hint">For gaming/video editing, a GPU is essential. Office/coding can use iGPU</div>
+        <div class="quiz-opts">
+          <div class="qopt" onclick="sel(this,'gpu','yes')"><div class="qi">🖥️</div><div class="qt">Yes, dedicated GPU</div><div class="qs">Gaming, 3D, video editing, AI</div></div>
+          <div class="qopt" onclick="sel(this,'gpu','igpu')"><div class="qi">⚡</div><div class="qt">iGPU is fine</div><div class="qs">Office, coding, light work — save money</div></div>
+          <div class="qopt" onclick="sel(this,'gpu','later')"><div class="qi">⏳</div><div class="qt">Add GPU later</div><div class="qs">Get iGPU now, add GPU next year</div></div>
+        </div>
+      </div>
+
+      <div class="quiz-nav">
+        <button class="btn-nav" id="prevBtn" onclick="prevStep()" style="display:none">← Back</button>
+        <div class="quiz-steps-ind">
+          <div class="sind active" id="si0"></div>
+          <div class="sind" id="si1"></div>
+          <div class="sind" id="si2"></div>
+          <div class="sind" id="si3"></div>
+        </div>
+        <button class="btn-nav primary" id="nextBtn" onclick="nextStep()">Next →</button>
+      </div>
+
+      <!-- Result -->
+      <div class="build-result" id="buildResult">
+        <div class="result-header">
+          <div>
+            <div class="result-title">Your Recommended Build <span class="badge" id="result-badge" style="background:var(--accent);color:#fff"></span></div>
+            <div style="font-size:0.8rem;color:var(--text3);margin-top:4px" id="result-tagline"></div>
+          </div>
+          <div class="result-price" id="result-price"></div>
+        </div>
+        <div class="parts-grid" id="parts-grid"></div>
+        <div class="result-notes" id="result-notes"></div>
+        <button class="reset-btn" onclick="resetQuiz()">↺ Start Over — Try Another Build</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CPU ══════════════ -->
+<div class="comp-section" id="cpu">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">PROCESSOR</div>
+    <div class="sec-title">CPU Guide — <span class="hl">Intel vs AMD</span></div>
+    <p class="sec-sub">The brain of your PC. Both brands are excellent in 2025 — choose based on your workload and budget.</p>
+    <div class="cpu-grid">
+      <div class="cpu-card intel-card">
+        <div class="cpu-brand-head">
+          <div class="brand-icon" style="background:rgba(255,255,255,0.15)">🔵</div>
+          <div>
+            <div class="brand-name">Intel Core</div>
+            <div style="font-size:0.72rem;opacity:0.8">LGA1700 Socket | DDR4 / DDR5</div>
+          </div>
+        </div>
+        <div class="cpu-tiers">
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(34,197,94,0.15);color:var(--green)">ENTRY</div><div class="tier-name">Core i3-13100 / i3-14100</div><div class="tier-spec">4C/8T · 60W · iGPU (UHD 730)</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:28%"></div></div></div></div>
+            <div class="tier-price">₹9,500<br/>– ₹12,500</div>
+          </div>
+          <div class="cpu-tier tier-best">
+            <div><div class="tier-label" style="background:rgba(59,130,246,0.15);color:var(--blue)">MID ⭐</div><div class="tier-name">Core i5-13400F / i5-14400F <span class="rec-badge">BEST VALUE</span></div><div class="tier-spec">10C/16T · 65W · No iGPU (needs GPU)</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:58%"></div></div></div></div>
+            <div class="tier-price">₹16,000<br/>– ₹20,500</div>
+          </div>
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(245,158,11,0.15);color:var(--yellow)">HIGH</div><div class="tier-name">Core i7-14700 / i7-14700K</div><div class="tier-spec">20C/28T · 65–125W · iGPU UHD 770</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:78%"></div></div></div></div>
+            <div class="tier-price">₹28,000<br/>– ₹38,000</div>
+          </div>
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(239,68,68,0.15);color:var(--red)">FLAGSHIP</div><div class="tier-name">Core i9-14900K / i9-14900KF</div><div class="tier-spec">24C/32T · 125W · Extreme performance</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:100%"></div></div></div></div>
+            <div class="tier-price">₹48,000<br/>– ₹62,000</div>
+          </div>
+          <div style="padding:0.6rem;background:rgba(59,130,246,0.06);border-radius:6px;font-size:0.75rem;color:var(--text3);border:1px solid rgba(59,130,246,0.15)">
+            ✅ <strong style="color:var(--text)">Intel Strengths:</strong> Best gaming single-core performance · Great iGPU (non-F) · Wide B760 mobo selection · Thunderbolt support
+          </div>
+        </div>
+      </div>
+      <div class="cpu-card amd-card">
+        <div class="cpu-brand-head">
+          <div class="brand-icon" style="background:rgba(255,255,255,0.15)">🔴</div>
+          <div>
+            <div class="brand-name">AMD Ryzen</div>
+            <div style="font-size:0.72rem;opacity:0.8">AM4 (5000) / AM5 (7000/9000) | DDR4/DDR5</div>
+          </div>
+        </div>
+        <div class="cpu-tiers">
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(34,197,94,0.15);color:var(--green)">ENTRY + iGPU</div><div class="tier-name">Ryzen 5 5600G / 5700G</div><div class="tier-spec">6C/12T · 65W · Radeon Vega 7/8 iGPU</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:30%;background:var(--red)"></div></div></div></div>
+            <div class="tier-price">₹11,000<br/>– ₹15,500</div>
+          </div>
+          <div class="cpu-tier tier-best" style="border-color:var(--red)!important">
+            <div><div class="tier-label" style="background:rgba(239,68,68,0.15);color:var(--red)">MID ⭐</div><div class="tier-name">Ryzen 5 5600X / 5600 <span class="rec-badge" style="background:var(--red)">POPULAR</span></div><div class="tier-spec">6C/12T · 65W · Excellent value AM4</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:52%;background:var(--red)"></div></div></div></div>
+            <div class="tier-price">₹13,500<br/>– ₹17,000</div>
+          </div>
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(245,158,11,0.15);color:var(--yellow)">HIGH</div><div class="tier-name">Ryzen 7 7700X / Ryzen 7 5800X3D</div><div class="tier-spec">8C/16T · AM5 (7700X) / AM4 (5800X3D)</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:72%;background:var(--red)"></div></div></div></div>
+            <div class="tier-price">₹24,000<br/>– ₹33,000</div>
+          </div>
+          <div class="cpu-tier">
+            <div><div class="tier-label" style="background:rgba(139,92,246,0.15);color:var(--purple)">FLAGSHIP</div><div class="tier-name">Ryzen 9 7950X / Ryzen 9 9900X</div><div class="tier-spec">16–24C · Content creation monster</div><div class="cpu-compare-bar"><div class="cbar"><div class="cbar-fill" style="width:100%;background:var(--red)"></div></div></div></div>
+            <div class="tier-price">₹48,000<br/>– ₹75,000</div>
+          </div>
+          <div style="padding:0.6rem;background:rgba(239,68,68,0.06);border-radius:6px;font-size:0.75rem;color:var(--text3);border:1px solid rgba(239,68,68,0.15)">
+            ✅ <strong style="color:var(--text)">AMD Strengths:</strong> More cores per rupee · Better multi-threaded (video/3D/AI) · Energy efficient · AM4 is budget-friendly in 2025 · 5600G has strong iGPU
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox warn" style="margin-top:1rem">⚠️ <strong>F models (i5-13400F, i3-13100F):</strong> No integrated GPU — you MUST pair with a dedicated graphics card. Non-F models have iGPU and can run without a GPU — ideal if you add a GPU later.</div>
+  </div>
+</div>
+
+<!-- ══════════════ GPU ══════════════ -->
+<div class="comp-section" id="gpu">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">GRAPHICS CARD</div>
+    <div class="sec-title">GPU Guide — <span class="hl">NVIDIA vs AMD</span></div>
+    <p class="sec-sub">India ke market mein GPU ka price frequently changes. PCIe x16 slot mein fit hota hai. Budget ke hisaab se choose karo.</p>
+    <div class="gpu-grid">
+      <div class="gpu-card" style="border-color:var(--green)">
+        <div class="gpu-head" style="background:rgba(34,197,94,0.08)"><div class="gpu-name">RX 6600 / RX 6650 XT</div><div class="gpu-vram" style="background:rgba(34,197,94,0.15);color:var(--green)">8GB</div></div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1080p Gaming</span><span style="color:var(--green)">Great</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:60%;background:var(--green)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1440p Gaming</span><span>Average</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:38%;background:var(--yellow)"></div></div></div>
+          <div class="gpu-price">₹18,000 – ₹24,000</div>
+          <div class="gpu-use">🎮 Best budget 1080p card | AMD — no DLSS but FSR available</div>
+        </div>
+      </div>
+      <div class="gpu-card" style="border-color:var(--blue)">
+        <div class="gpu-head" style="background:rgba(59,130,246,0.08)"><div class="gpu-name">RTX 3060 / RTX 3060 Ti</div><div class="gpu-vram" style="background:rgba(59,130,246,0.15);color:var(--blue)">12GB/8GB</div></div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1080p Gaming</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:72%;background:var(--blue)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1440p Gaming</span><span style="color:var(--yellow)">Good</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:54%;background:var(--blue)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>AI/CUDA</span><span style="color:var(--blue)">Good</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:60%;background:var(--purple)"></div></div></div>
+          <div class="gpu-price">₹22,000 – ₹30,000</div>
+          <div class="gpu-use">🎮 DLSS support · 12GB VRAM is excellent for price · Content creation</div>
+        </div>
+      </div>
+      <div class="gpu-card" style="border-color:var(--accent);box-shadow:0 0 20px rgba(255,87,34,0.1)">
+        <div class="gpu-head" style="background:rgba(255,87,34,0.08)">
+          <div><div style="font-size:0.62rem;color:var(--accent);font-weight:700;margin-bottom:2px">⭐ BEST VALUE 2025</div><div class="gpu-name">RTX 4060 8GB</div></div>
+          <div class="gpu-vram" style="background:rgba(255,87,34,0.15);color:var(--accent)">8GB</div>
+        </div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1080p Gaming</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:82%;background:var(--accent)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1440p Gaming</span><span style="color:var(--yellow)">Very Good</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:66%;background:var(--accent)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>DLSS 3 / AI</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:80%;background:var(--purple)"></div></div></div>
+          <div class="gpu-price">₹26,000 – ₹33,000</div>
+          <div class="gpu-use">🎮 DLSS 3 · Frame Generation · NVENC for streaming · Low power 115W</div>
+        </div>
+      </div>
+      <div class="gpu-card">
+        <div class="gpu-head" style="background:rgba(59,130,246,0.06)"><div class="gpu-name">RTX 4060 Ti / RTX 4070</div><div class="gpu-vram" style="background:rgba(59,130,246,0.1);color:var(--blue)">16GB/12GB</div></div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>1440p Gaming</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:85%;background:var(--blue)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>4K Gaming</span><span style="color:var(--yellow)">Good</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:60%;background:var(--blue)"></div></div></div>
+          <div class="gpu-price">₹42,000 – ₹58,000</div>
+          <div class="gpu-use">🎬 Video editing · 4K gaming · AI local models · Streaming</div>
+        </div>
+      </div>
+      <div class="gpu-card">
+        <div class="gpu-head" style="background:rgba(139,92,246,0.08)"><div class="gpu-name">RTX 4070 Ti / RTX 4080</div><div class="gpu-vram" style="background:rgba(139,92,246,0.15);color:var(--purple)">16GB/16GB</div></div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>4K Gaming</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:88%;background:var(--purple)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>AI / CUDA</span><span style="color:var(--green)">Excellent</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:90%;background:var(--purple)"></div></div></div>
+          <div class="gpu-price">₹70,000 – ₹1,10,000</div>
+          <div class="gpu-use">🔬 Professional workstation · 4K gaming · Local LLM inference</div>
+        </div>
+      </div>
+      <div class="gpu-card" style="border-style:dashed">
+        <div class="gpu-head"><div class="gpu-name">iGPU (AMD Vega 7/8, Intel UHD)</div><div class="gpu-vram" style="background:var(--border);color:var(--text3)">Shared</div></div>
+        <div class="gpu-body">
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>Office / Browser</span><span style="color:var(--green)">Perfect</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:95%;background:var(--green)"></div></div></div>
+          <div class="gpu-bar-wrap"><div class="gpu-bar-label"><span>Light Gaming</span><span style="color:var(--yellow)">OK (720p)</span></div><div class="gpu-bar"><div class="gpu-bar-fill" style="width:22%;background:var(--yellow)"></div></div></div>
+          <div class="gpu-price">₹0 — Included in CPU</div>
+          <div class="gpu-use">💡 Save money now · Add GPU later · Ryzen 5600G has best iGPU</div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox info" style="margin-top:1rem">💡 <strong>GPU Buying Tip:</strong> GPU prices in India are 15–25% higher than US prices due to import duties. Always compare Amazon.in, Flipkart, and local Nehru Place prices. <strong>Never buy used mining GPU</strong> without proper testing — stress test for 30 mins with FurMark.</div>
+  </div>
+</div>
+
+<!-- ══════════════ RAM ══════════════ -->
+<div class="comp-section" id="ram">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">MEMORY</div>
+    <div class="sec-title">RAM — <span class="hl">DDR3 to DDR5</span></div>
+    <p class="sec-sub">DDR generations are NOT compatible with each other. Your CPU and motherboard dictate which DDR you need.</p>
+    <div class="ram-timeline">
+      <div class="ram-row" style="opacity:0.5">
+        <div class="ram-gen" style="color:var(--text3)">DDR3</div>
+        <div><div style="font-size:0.72rem;color:var(--text3);margin-bottom:4px">2007–2015 · Old systems · Still found at Nehru Place</div><div class="ram-bar"><div class="ram-fill" style="width:18%;background:#555"></div></div></div>
+        <div class="ram-speed">800–2133 MT/s</div>
+        <div class="ram-price">₹600–₹1,800<br/><span style="font-size:0.65rem">Used only</span></div>
+      </div>
+      <div class="ram-row current">
+        <div class="ram-gen" style="color:var(--blue)">DDR4</div>
+        <div><div style="font-size:0.72rem;color:var(--blue);margin-bottom:4px"><strong>Most Popular in India 2025 — Best Value</strong> · AM4 + Intel 10th-12th gen</div><div class="ram-bar"><div class="ram-fill" style="width:58%;background:var(--blue)"></div></div></div>
+        <div class="ram-speed" style="color:var(--blue)">2133–3600 MT/s</div>
+        <div class="ram-price" style="color:var(--blue)">₹2,200–₹4,200<br/><span style="font-size:0.65rem">16GB kit</span></div>
+      </div>
+      <div class="ram-row latest">
+        <div class="ram-gen" style="color:var(--accent)">DDR5</div>
+        <div><div style="font-size:0.72rem;color:var(--accent);margin-bottom:4px"><strong>Latest Standard</strong> · Intel 12th gen+ / Ryzen 7000/9000 (AM5) required</div><div class="ram-bar"><div class="ram-fill" style="width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div></div>
+        <div class="ram-speed" style="color:var(--accent)">4800–7200 MT/s</div>
+        <div class="ram-price" style="color:var(--accent)">₹3,200–₹7,000<br/><span style="font-size:0.65rem">16GB kit</span></div>
+      </div>
+    </div>
+    <div class="ram-tips">
+      <div class="rtip"><div class="rtip-icon">🔄</div><h4>Incompatible Slots</h4><p>DDR3 / DDR4 / DDR5 have different physical notch positions. You physically cannot insert wrong DDR into a motherboard — no risk of damage, just won't fit.</p></div>
+      <div class="rtip"><div class="rtip-icon">⚡</div><h4>Dual Channel = ~20% Speed Boost</h4><p>2×8GB is always better than 1×16GB. Use matching slots (usually A2 + B2, check your motherboard manual). Same brand, same speed preferred.</p></div>
+      <div class="rtip"><div class="rtip-icon">⚙️</div><h4>Enable XMP / EXPO in BIOS</h4><p>RAM defaults to slow 2133MHz. Enable XMP (Intel) or EXPO (AMD) in BIOS to get rated speed. Takes 30 seconds — always do this!</p></div>
+      <div class="rtip"><div class="rtip-icon">📦</div><h4>16GB vs 32GB?</h4><p>16GB: Office, coding, light gaming — perfectly fine. 32GB: Video editing, heavy dev (Docker + IDEs), gaming + streaming simultaneously. 64GB only for AI/ML workstations.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ STORAGE ══════════════ -->
+<div class="comp-section" id="storage">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">STORAGE</div>
+    <div class="sec-title">Storage — <span class="hl">HDD to NVMe Gen5</span></div>
+    <p class="sec-sub">HDD pe Windows boot = 2 minutes. NVMe Gen4 pe = 8 seconds. Always get NVMe as your OS drive.</p>
+    <div class="storage-grid">
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-type">SPINNING DISK</div>
+          <div class="sc-name">HDD 3.5"</div>
+          <div class="sc-badge" style="background:rgba(107,116,144,0.15);color:var(--text3)">LEGACY</div>
+          <div class="sc-speed">130 <span>MB/s</span></div>
+          <div class="sc-bar"><div class="sc-fill" style="width:5%;background:#555"></div></div>
+        </div>
+        <div class="sc-body">
+          <p>Use ONLY as secondary storage for movies, backups, old files. Never as your boot drive.</p>
+          <div class="sc-price">₹2,800 – ₹4,200 / 1TB</div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-type">SATA SSD</div>
+          <div class="sc-name">2.5" SATA SSD</div>
+          <div class="sc-badge" style="background:rgba(59,130,246,0.15);color:var(--blue)">BUDGET</div>
+          <div class="sc-speed">550 <span>MB/s</span></div>
+          <div class="sc-bar"><div class="sc-fill" style="width:25%;background:var(--blue)"></div></div>
+        </div>
+        <div class="sc-body">
+          <p>4x faster than HDD. Uses SATA cable. Good if your board has no M.2 slot. Kingston A400, Samsung 870 EVO.</p>
+          <div class="sc-price">₹2,000 – ₹3,500 / 256GB</div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-head">
+          <div class="sc-type">M.2 NVME</div>
+          <div class="sc-name">NVMe PCIe 3.0</div>
+          <div class="sc-badge" style="background:rgba(34,197,94,0.15);color:var(--green)">POPULAR</div>
+          <div class="sc-speed">3,500 <span>MB/s</span></div>
+          <div class="sc-bar"><div class="sc-fill" style="width:55%;background:var(--green)"></div></div>
+        </div>
+        <div class="sc-body">
+          <p>No cable needed — slots directly into motherboard. Perfect for Ryzen 3000/5000, Intel 10th/11th gen. WD Blue SN570, Kingston NV2.</p>
+          <div class="sc-price">₹3,500 – ₹6,500 / 512GB</div>
+        </div>
+      </div>
+      <div class="sc featured">
+        <div class="sc-head">
+          <div class="sc-type">M.2 NVME</div>
+          <div class="sc-name">NVMe PCIe 4.0</div>
+          <div class="sc-badge" style="background:rgba(255,87,34,0.15);color:var(--accent)">RECOMMENDED ⭐</div>
+          <div class="sc-speed">7,000 <span>MB/s</span></div>
+          <div class="sc-bar"><div class="sc-fill" style="width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))"></div></div>
+        </div>
+        <div class="sc-body">
+          <p>Intel 12th gen+ or Ryzen 5000/7000+ required. Get this for any new build — price is same as Gen3 now. WD Black SN850X, Samsung 980 Pro.</p>
+          <div class="sc-price">₹4,500 – ₹9,000 / 1TB</div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox tip"><strong>📐 M.2 Size Check:</strong> Most common is <strong>2280</strong> (22mm × 80mm). Check your motherboard's M.2 slot type — M-Key = NVMe, B+M Key = SATA SSD. Gen4 slots are backward compatible with Gen3 drives (just slower). Brands to trust: WD, Samsung, Kingston, Crucial, Seagate.</div>
+  </div>
+</div>
+
+<!-- ══════════════ MOTHERBOARD ══════════════ -->
+<div class="comp-section" id="motherboard">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">MOTHERBOARD</div>
+    <div class="sec-title">Motherboard — <span class="hl">Chipset Guide</span></div>
+    <p class="sec-sub">The backbone connecting all components. Must match your CPU socket. Don't buy a Z-series board for non-K CPUs — waste of money.</p>
+    <div class="mb-tabs">
+      <button class="mb-tab on" onclick="mbSwitch('intel',this)">🔵 Intel (LGA1700)</button>
+      <button class="mb-tab" onclick="mbSwitch('am4',this)">🔴 AMD AM4 (Ryzen 5000)</button>
+      <button class="mb-tab" onclick="mbSwitch('am5',this)">🟠 AMD AM5 (Ryzen 7000/9000)</button>
+    </div>
+    <div class="mb-panel on" id="mb-intel">
+      <div class="mbc"><div class="mb-head" style="background:#1E3A6E">H610</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹6,000–₹9,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--red)">No</span></div><div class="mb-row"><span class="k">RAM OC (XMP)</span><span class="mv" style="color:var(--red)">No</span></div><div class="mb-row"><span class="k">RAM Slots</span><span class="mv" style="color:var(--text)">2</span></div><div class="mb-row"><span class="k">M.2 Slots</span><span class="mv" style="color:var(--text)">1</span></div><div class="mb-row"><span class="k">PCIe Gen</span><span class="mv" style="color:var(--text)">4.0 × 16</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">i3 office builds</span></div></div></div>
+      <div class="mbc best"><div class="mb-head" style="background:#1A3A8A">B760 <span class="best-chip">BEST VALUE</span></div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹10,000–₹18,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--red)">No</span></div><div class="mb-row"><span class="k">XMP / DLSS 3</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">RAM Slots</span><span class="mv" style="color:var(--text)">4</span></div><div class="mb-row"><span class="k">M.2 Slots</span><span class="mv" style="color:var(--text)">2–3</span></div><div class="mb-row"><span class="k">PCIe Gen</span><span class="mv" style="color:var(--text)">5.0 × 16</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">i5/i7 — most popular</span></div></div></div>
+      <div class="mbc"><div class="mb-head" style="background:#0D2244">Z790</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹18,000–₹50,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--green)">Full OC</span></div><div class="mb-row"><span class="k">XMP</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">RAM Slots</span><span class="mv" style="color:var(--text)">4</span></div><div class="mb-row"><span class="k">M.2 Slots</span><span class="mv" style="color:var(--text)">4–5</span></div><div class="mb-row"><span class="k">PCIe Gen</span><span class="mv" style="color:var(--text)">5.0 × 16</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">i7-K / i9-K only</span></div></div></div>
+    </div>
+    <div class="mb-panel" id="mb-am4">
+      <div class="mbc"><div class="mb-head" style="background:#7A1515">A520</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹5,500–₹8,500</span></div><div class="mb-row"><span class="k">OC</span><span class="mv" style="color:var(--red)">No</span></div><div class="mb-row"><span class="k">PCIe</span><span class="mv" style="color:var(--text)">3.0</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 5500 budget</span></div></div></div>
+      <div class="mbc best" style="border-color:var(--red)"><div class="mb-head" style="background:#9E1B1B">B550 <span class="best-chip" style="background:var(--red)">POPULAR</span></div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹8,000–₹16,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--yellow)">Limited</span></div><div class="mb-row"><span class="k">PCIe 4.0</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">M.2</span><span class="mv" style="color:var(--text)">2 slots</span></div><div class="mb-row"><span class="k">EXPO</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 5600X — king of value</span></div></div></div>
+      <div class="mbc"><div class="mb-head" style="background:#5A0D0D">X570</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹14,000–₹28,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--green)">Full</span></div><div class="mb-row"><span class="k">PCIe 4.0</span><span class="mv" style="color:var(--green)">Full</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 5800X / 5900X</span></div></div></div>
+    </div>
+    <div class="mb-panel" id="mb-am5">
+      <div class="mbc"><div class="mb-head" style="background:#7A3A00">A620</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹9,000–₹13,000</span></div><div class="mb-row"><span class="k">OC</span><span class="mv" style="color:var(--red)">No</span></div><div class="mb-row"><span class="k">DDR5</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 7 7700 budget</span></div></div></div>
+      <div class="mbc best" style="border-color:var(--accent)"><div class="mb-head" style="background:#B35000">B650 <span class="best-chip" style="background:var(--accent)">RECOMMENDED</span></div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹14,000–₹24,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--yellow)">Partial</span></div><div class="mb-row"><span class="k">DDR5</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">PCIe 5.0</span><span class="mv" style="color:var(--green)">Yes</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 7 7700X / 9600X</span></div></div></div>
+      <div class="mbc"><div class="mb-head" style="background:#7A2800">X670E</div><div class="mb-body"><div class="mb-row"><span class="k">Price</span><span class="mv" style="color:var(--text)">₹22,000–₹55,000</span></div><div class="mb-row"><span class="k">CPU OC</span><span class="mv" style="color:var(--green)">Full</span></div><div class="mb-row"><span class="k">PCIe 5.0</span><span class="mv" style="color:var(--green)">Full x16 + x4</span></div><div class="mb-row"><span class="k">Best for</span><span class="mv" style="color:var(--text)">Ryzen 9 7950X flagship</span></div></div></div>
+    </div>
+    <div class="infobox warn" style="margin-top:1rem">⚡ <strong>Form Factor:</strong> ATX (Full Size, 4 RAM slots) → Full/Mid Tower cabinet needed. mATX (Micro ATX, 4 slots) → Best value, fits Mid Tower. ITX (Mini, 2 slots) → Compact, expensive, harder to build. Stick to ATX or mATX for your first build.</div>
+  </div>
+</div>
+
+<!-- ══════════════ PSU ══════════════ -->
+<div class="comp-section" id="psu">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">POWER SUPPLY</div>
+    <div class="sec-title">PSU — <span class="hl">Don't Cheap Out Here</span></div>
+    <p class="sec-sub">A bad PSU can destroy your entire ₹80,000 build. Spend ₹5,000–₹8,000 on a quality 80+ Gold unit. Always.</p>
+    <div class="psu-table">
+      <div class="psu-head">
+        <span>Rating</span><span>Efficiency</span><span>India Brands</span><span>Price Range</span><span>Verdict</span>
+      </div>
+      <div class="psu-row">
+        <div class="psu-rating" style="color:var(--red)">No Rating</div>
+        <div class="psu-eff" style="color:var(--red)">~65%</div>
+        <div class="psu-brands">Local unbranded, Zebronics budget</div>
+        <div class="psu-price">₹600–₹1,500</div>
+        <div class="psu-rec"><span class="badge-red">❌ NEVER BUY</span></div>
+      </div>
+      <div class="psu-row">
+        <div class="psu-rating" style="color:var(--text3)">80+ White</div>
+        <div class="psu-eff" style="color:var(--text3)">~80%</div>
+        <div class="psu-brands">Frontech, some Zebronics</div>
+        <div class="psu-price">₹1,500–₹2,800</div>
+        <div class="psu-rec"><span class="badge-gray">Basic only</span></div>
+      </div>
+      <div class="psu-row">
+        <div class="psu-rating" style="color:var(--yellow)">80+ Bronze</div>
+        <div class="psu-eff" style="color:var(--yellow)">~82–85%</div>
+        <div class="psu-brands">Corsair CV, CoolerMaster MWE, Antec</div>
+        <div class="psu-price">₹2,800–₹5,500</div>
+        <div class="psu-rec"><span class="badge-yellow">✓ Acceptable</span></div>
+      </div>
+      <div class="psu-row best-row">
+        <div class="psu-rating" style="color:var(--green)">80+ Gold ⭐</div>
+        <div class="psu-eff" style="color:var(--green)">~87–90%</div>
+        <div class="psu-brands">Corsair RM650, Seasonic Focus, EVGA SuperNOVA</div>
+        <div class="psu-price">₹5,000–₹10,000</div>
+        <div class="psu-rec"><span class="badge-green">✅ BEST CHOICE</span></div>
+      </div>
+      <div class="psu-row">
+        <div class="psu-rating" style="color:var(--blue)">80+ Platinum</div>
+        <div class="psu-eff" style="color:var(--blue)">~90–92%</div>
+        <div class="psu-brands">Seasonic Prime, Be Quiet! Dark Power</div>
+        <div class="psu-price">₹9,000–₹18,000</div>
+        <div class="psu-rec"><span class="badge-blue">High-end</span></div>
+      </div>
+    </div>
+    <div class="watt-guide">
+      <div class="watt-card"><h4>🏢 Office / No GPU</h4><p>Intel i3/i5 or Ryzen 5600G without dedicated GPU.<br/><strong style="color:var(--accent2)">350–450W</strong> is sufficient.</p></div>
+      <div class="watt-card"><h4>🎮 Mid Gaming</h4><p>i5-13400F + RTX 4060 or Ryzen 5600X + RX 6700.<br/><strong style="color:var(--accent2)">550–650W 80+ Gold</strong></p></div>
+      <div class="watt-card"><h4>🔥 High-End Gaming</h4><p>i7-14700K + RTX 4070 Ti or Ryzen 9 + RX 7900.<br/><strong style="color:var(--accent2)">750–850W 80+ Gold</strong></p></div>
+      <div class="watt-card"><h4>🔬 Workstation</h4><p>i9/Ryzen 9 + RTX 4090 or dual GPU.<br/><strong style="color:var(--accent2)">1000W+ 80+ Platinum</strong></p></div>
+    </div>
+    <div class="infobox tip"><strong>Rule of Thumb:</strong> Calculate your system's peak draw (use PCPartPicker.com or OuterVision), then add <strong>30–40% headroom</strong>. This ensures efficiency, longevity, and room for future upgrades. Fully modular PSUs are worth the extra ₹1,000–₹2,000 for cable management.</div>
+  </div>
+</div>
+
+<!-- ══════════════ CABINET ══════════════ -->
+<div class="comp-section" id="cabinet">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">CABINET / CASE</div>
+    <div class="sec-title">Cabinet — <span class="hl">Airflow is King in India</span></div>
+    <p class="sec-sub">India's hot climate (35–45°C summers) means you need mesh front panels and good fan layout. Never buy a closed-front case.</p>
+    <div class="cab-grid">
+      <div class="cab-card">
+        <div class="cab-icon">📦</div>
+        <div class="cab-name">Mini-ITX</div>
+        <div class="cab-form">ITX FORM FACTOR</div>
+        <div class="cab-price">₹3,500–₹9,000</div>
+        <div class="cab-desc">Only ITX motherboards fit. Very compact. Difficult cooling, expensive. For HTPC/desktop builds only.</div>
+        <div class="cab-brands"><strong>Brands:</strong> Cooler Master Elite 110, Fractal Design Node</div>
+      </div>
+      <div class="cab-card">
+        <div class="cab-icon">🖥️</div>
+        <div class="cab-name">mATX Mid Tower</div>
+        <div class="cab-form">MICRO ATX</div>
+        <div class="cab-price">₹2,000–₹6,500</div>
+        <div class="cab-desc">Fits mATX + ATX boards. India's most popular. Great value, decent airflow options. Solid first-build choice.</div>
+        <div class="cab-brands"><strong>Brands:</strong> Deepcool Matrexx 40, Corsair 110R, Ant Esports ICE-100</div>
+      </div>
+      <div class="cab-card rec">
+        <div style="font-size:0.65rem;color:var(--accent);font-weight:700;margin-bottom:4px">⭐ RECOMMENDED FOR INDIA</div>
+        <div class="cab-icon">🏗️</div>
+        <div class="cab-name">ATX Mid Tower (Mesh)</div>
+        <div class="cab-form">FULL ATX</div>
+        <div class="cab-price">₹3,500–₹14,000</div>
+        <div class="cab-desc">Mesh front panel = maximum airflow. 3–5 fan slots. Fits all ATX/mATX boards. Best cooling for Indian summers.</div>
+        <div class="cab-brands"><strong>Brands:</strong> Lian Li Lancool 216, Fractal Meshify C, Corsair 4000D Airflow, Antec P120 Crystal</div>
+      </div>
+      <div class="cab-card">
+        <div class="cab-icon">🏰</div>
+        <div class="cab-name">Full Tower</div>
+        <div class="cab-form">E-ATX / HEDT</div>
+        <div class="cab-price">₹7,000–₹30,000</div>
+        <div class="cab-desc">Custom water cooling, 360mm radiators, multiple GPU support. Workstation / enthusiast builds only.</div>
+        <div class="cab-brands"><strong>Brands:</strong> Lian Li O11 Dynamic, Corsair 7000D, Phanteks Enthoo</div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;margin-top:1rem">
+      <div style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.8rem">🌬️ India Airflow Rules</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px">
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Always get mesh front panel</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Front fans = intake (pull air in)</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Rear + top fans = exhaust (push air out)</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Minimum 3 case fans for any build</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Check CPU cooler height clearance</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Check GPU length before buying</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">✅ Cable tie everything for airflow</div>
+        <div style="font-size:0.78rem;color:var(--text2);padding:6px 0">⚠️ Avoid side-panel intake — traps heat</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SHOPS ══════════════ -->
+<div class="shops-section comp-section" id="shops">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">WHERE TO BUY</div>
+    <div class="sec-title">Physical Stores — <span class="hl">Genuine PC Markets</span></div>
+    <p class="sec-sub">India's best PC markets with verified genuine stores. Always bargain, always check invoice, always test before paying.</p>
+
+    <div class="city-tabs">
+      <button class="city-tab on" onclick="showCity('delhi',this)">🔴 Nehru Place, Delhi</button>
+      <button class="city-tab" onclick="showCity('mumbai',this)">🟠 Lamington Road, Mumbai</button>
+      <button class="city-tab" onclick="showCity('bengaluru',this)">🟢 SP Road, Bengaluru</button>
+      <button class="city-tab" onclick="showCity('hyderabad',this)">🔵 Abids, Hyderabad</button>
+      <button class="city-tab" onclick="showCity('pune',this)">🟡 Budhwar Peth, Pune</button>
+      <button class="city-tab" onclick="showCity('kolkata',this)">🟣 Chandni Chowk, Kolkata</button>
+    </div>
+
+    <!-- DELHI -->
+    <div class="city-panel on" id="city-delhi">
+      <div class="city-hero">
+        <div class="city-name">Nehru Place, New Delhi — India's #1 IT Market</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 Nehru Place, South Delhi</span>
+          <span class="cmeta">🚇 Nehru Place Metro (Violet Line)</span>
+          <span class="cmeta">⏰ Mon–Sat, 10am – 7pm</span>
+          <span class="cmeta" style="color:var(--green);border-color:var(--green)">✅ India's Cheapest Prices</span>
+        </div>
+        <ul class="city-tips">
+          <li>India's <strong>largest and cheapest</strong> PC market — 5–15% cheaper than Mumbai/Bengaluru</li>
+          <li>Everything available under one roof: CPU, GPU, RAM, MB, storage, peripherals, cables</li>
+          <li><strong>Tray CPU</strong> (no box packaging): ₹2,000–₹4,000 cheaper than boxed — no manufacturer warranty but dealer warranty</li>
+          <li>Used/refurbished parts also available — huge savings possible with careful inspection</li>
+          <li><strong>Bargaining tip:</strong> Buy 4+ components together → negotiate 10–18% bundle discount</li>
+          <li>Pay cash where possible — some shops charge 1.5–2% extra for card/UPI on large purchases</li>
+          <li>Always ask for <strong>GST invoice</strong> — protects you for warranty claims</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Best Buys Here</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Processors · Motherboards · RAM · GPU · Monitors · UPS · Peripherals · All PC accessories</span></div>
+          <div class="c2" style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)"><strong style="color:var(--red)">⚠️ Watch Out For</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Mining-used GPUs — always stress test before paying · Fake branded RAM — check MRP sticker · Grey market imports without warranty</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Chhabra Electronics</div><div class="shop-loc">Nehru Place Market, Block C</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">CPUs</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">GPUs</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">Motherboards</span></div><div class="shop-note">One of the oldest shops. Good for branded components. Negotiate bulk deals here.</div></div>
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Excel Computers</div><div class="shop-loc">Nehru Place, Upper Floors</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Assembled PCs</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Custom Builds</span></div><div class="shop-note">Specialises in assembled custom PCs. Show them your build list — they'll price it competitively.</div></div>
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Vijay Computers</div><div class="shop-loc">Nehru Place Ground Floor</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">RAM</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">Storage</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Peripherals</span></div><div class="shop-note">Competitive RAM and SSD pricing. Good place to compare prices before buying elsewhere.</div></div>
+        <div class="shop-card"><div class="shop-name">Online Alternatives</div><div class="shop-loc">Amazon.in, Flipkart, MDComputers.in</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Home Delivery</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Easy Returns</span></div><div class="shop-note">Often 5–8% more expensive than Nehru Place but official warranty, easy returns, and no travel needed.</div></div>
+      </div>
+    </div>
+
+    <!-- MUMBAI -->
+    <div class="city-panel" id="city-mumbai">
+      <div class="city-hero">
+        <div class="city-name">Lamington Road, Mumbai — Western India Tech Hub</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 Grant Road, Mumbai</span>
+          <span class="cmeta">🚇 Grant Road Station (Western Railway)</span>
+          <span class="cmeta">⏰ Mon–Sat, 10:30am – 8pm</span>
+          <span class="cmeta" style="color:var(--blue);border-color:var(--blue)">Electronics Paradise</span>
+        </div>
+        <ul class="city-tips">
+          <li>Mumbai's oldest electronics market — decades of history, trusted dealers</li>
+          <li><strong>Electronics components heaven</strong> — capacitors, ICs, Arduino, Raspberry Pi, sensors</li>
+          <li>PC parts available but smaller selection vs Nehru Place — compare online first</li>
+          <li>HP, Dell, Lenovo authorized service centers nearby — good for warranty repairs</li>
+          <li>Networking gear (routers, switches, cables) at very good prices</li>
+          <li>Multiple floors — explore all floors before settling on a shop</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Best Buys</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Electronic components · Arduino/Pi kits · Cables · Networking gear · Mobile parts · Soldering equipment</span></div>
+          <div class="c2" style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"><strong style="color:var(--blue)">💡 Mumbai Tip</strong><br/><span style="font-size:0.78rem;color:var(--text3)">For complete PC builds, use Amazon/Flipkart or MDComputers.in — Lamington Road is better for components and DIY electronics</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ POPULAR</div><div class="shop-name">Alfa Computers</div><div class="shop-loc">Lamington Road, Ground Floor</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">PC Parts</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">Laptops</span></div><div class="shop-note">Good selection of branded PC components. Ask for bundle discounts on complete builds.</div></div>
+        <div class="shop-card verified"><div class="verified-badge">✓ POPULAR</div><div class="shop-name">Bharat Electronics</div><div class="shop-loc">Lamington Road</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Components</span><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">Arduino</span></div><div class="shop-note">Best place for DIY electronics, Raspberry Pi, Arduino, sensors. Maker's paradise in Mumbai.</div></div>
+        <div class="shop-card"><div class="shop-name">Nehru Planetarium Area Shops</div><div class="shop-loc">Worli, Mumbai</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(139,92,246,0.1);color:var(--purple)">Authorized</span></div><div class="shop-note">HP, Dell authorized dealers — good for warranty-backed purchases of branded systems.</div></div>
+      </div>
+    </div>
+
+    <!-- BENGALURU -->
+    <div class="city-panel" id="city-bengaluru">
+      <div class="city-hero">
+        <div class="city-name">SP Road, Bengaluru — Silicon City's PC Hub</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 SP Road, Seshadripuram, Bengaluru</span>
+          <span class="cmeta">🚌 Well connected by BMTC</span>
+          <span class="cmeta">⏰ Mon–Sat, 10am – 8pm</span>
+          <span class="cmeta" style="color:var(--green);border-color:var(--green)">Tech-Savvy Dealers</span>
+        </div>
+        <ul class="city-tips">
+          <li>Bengaluru's main IT market — diverse component selection, knowledgeable dealers</li>
+          <li><strong>SP Road + surrounding areas</strong> have 50+ PC shops — take time to explore</li>
+          <li>Many dealers here are tech-aware — good for technical advice on builds</li>
+          <li>Prices slightly higher than Nehru Place but still much better than mall stores</li>
+          <li>Online (Flipkart/Amazon) pricing competitive in Bangalore due to fast delivery</li>
+          <li>Popular with IT professionals — quality component sourcing available</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Best Buys</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Branded components · Monitors · Workstation parts · Networking · Server hardware</span></div>
+          <div class="c2" style="background:rgba(255,87,34,0.06);border:1px solid rgba(255,87,34,0.2)"><strong style="color:var(--accent)">💡 Bangalore Tip</strong><br/><span style="font-size:0.78rem;color:var(--text3)">MDComputers.in, Vedant Computers ship fast to Bangalore — compare before visiting SP Road</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ POPULAR</div><div class="shop-name">Vintech Computers</div><div class="shop-loc">SP Road, Bengaluru</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Branded PC Parts</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Custom Builds</span></div><div class="shop-note">Well-stocked shop on SP Road. Good for Intel + NVIDIA builds. Competitive pricing.</div></div>
+        <div class="shop-card verified"><div class="verified-badge">✓ POPULAR</div><div class="shop-name">Nehru Computers</div><div class="shop-loc">SP Road Area, Bengaluru</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">Components</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">GPUs</span></div><div class="shop-note">Good GPU selection. Compare prices here — they often match online pricing for quick sales.</div></div>
+        <div class="shop-card"><div class="shop-name">IndiaMart Sellers</div><div class="shop-loc">Online + Bengaluru delivery</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">B2B</span><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Bulk</span></div><div class="shop-note">For bulk purchases (office setups, gaming cafes) — wholesale pricing via IndiaMart.</div></div>
+      </div>
+    </div>
+
+    <!-- HYDERABAD -->
+    <div class="city-panel" id="city-hyderabad">
+      <div class="city-hero">
+        <div class="city-name">Abids + Kukatpally, Hyderabad — Twin Tech Hubs</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 Abids & Kukatpally, Hyderabad</span>
+          <span class="cmeta">🚇 Abids is accessible from Secunderabad</span>
+          <span class="cmeta">⏰ Mon–Sat, 10:30am – 8pm</span>
+        </div>
+        <ul class="city-tips">
+          <li><strong>Abids</strong> — traditional electronics market, good for basic components and branded gear</li>
+          <li><strong>Kukatpally (KPHB)</strong> — newer market, popular with IT crowd, better GPU selection</li>
+          <li>Cyber Towers area has authorized brand showrooms (HP, Lenovo, Dell)</li>
+          <li>Online delivery (Flipkart same-day, Amazon Prime) works very well in Hyderabad</li>
+          <li>Bargain confidently — Hyderabad dealers are used to negotiation</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Best Buys</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Assembled PCs · Peripherals · Networking · Monitors · UPS</span></div>
+          <div class="c2" style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2)"><strong style="color:var(--blue)">💡 Tip</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Prime Next-Day delivery works well in HYD — for GPU/CPU, online is often more reliable</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Lotus Computers</div><div class="shop-loc">Abids, Hyderabad</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Full Builds</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">Parts</span></div><div class="shop-note">Reliable dealer in Abids. Good for complete build assembly and component sourcing.</div></div>
+        <div class="shop-card"><div class="shop-name">KPHB Colony Shops</div><div class="shop-loc">Kukatpally, Hyderabad</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">Gaming PCs</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">GPUs</span></div><div class="shop-note">Multiple shops in KPHB area — walk the street and compare prices between 4–5 shops.</div></div>
+      </div>
+    </div>
+
+    <!-- PUNE -->
+    <div class="city-panel" id="city-pune">
+      <div class="city-hero">
+        <div class="city-name">Budhwar Peth + FC Road, Pune</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 Budhwar Peth, Pune</span>
+          <span class="cmeta">⏰ Mon–Sat, 10am – 8pm</span>
+        </div>
+        <ul class="city-tips">
+          <li><strong>Budhwar Peth</strong> — Pune's main electronics market, good for branded components</li>
+          <li>FC Road area has branded showrooms (HP, Dell) — good for laptop warranty service</li>
+          <li>Many student-friendly shops near Deccan area — competitive pricing</li>
+          <li>Pune has excellent Amazon/Flipkart next-day delivery — online is very competitive</li>
+          <li>For gaming PCs, online + Budhwar Peth combo is optimal strategy</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Best Buys</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Assembled PCs · Peripherals · Branded laptops · Monitors · Networking</span></div>
+          <div class="c2" style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2)"><strong style="color:var(--yellow)">💡 Pune Tip</strong><br/><span style="font-size:0.78rem;color:var(--text3)">MDComputers.in, Vedant Computers (based in Gujarat) ship to Pune in 2–3 days at great prices</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Rashi Peripherals (Distributor)</div><div class="shop-loc">Multiple Pune dealers</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Distributor</span></div><div class="shop-note">Rashi is India's largest PC component distributor. Their dealer network covers all of Pune.</div></div>
+        <div class="shop-card"><div class="shop-name">Budhwar Peth Market</div><div class="shop-loc">Budhwar Peth, Pune</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">All Parts</span><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">Bargaining</span></div><div class="shop-note">5+ shops in close proximity — compare 3 shops before buying. Bundle deals available.</div></div>
+      </div>
+    </div>
+
+    <!-- KOLKATA -->
+    <div class="city-panel" id="city-kolkata">
+      <div class="city-hero">
+        <div class="city-name">Chandni Chowk + Fancy Market, Kolkata</div>
+        <div class="city-meta">
+          <span class="cmeta">📍 Chandni Chowk, Kolkata (not Delhi)</span>
+          <span class="cmeta">🚇 Chandni Chowk Metro (Blue Line)</span>
+          <span class="cmeta">⏰ Mon–Sat, 11am – 8pm</span>
+        </div>
+        <ul class="city-tips">
+          <li>Kolkata's main IT market — decent pricing, major brands available</li>
+          <li><strong>Fancy Market</strong> nearby also has electronics shops — explore both</li>
+          <li>Local assemblers very active — readymade assembled PCs at negotiable rates</li>
+          <li>One-stop-shop strategy works well — negotiate package deal for all components</li>
+          <li>Amazon 2-day delivery + Flipkart same-day works excellently in Kolkata</li>
+        </ul>
+        <div class="city-2col">
+          <div class="c2" style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2)"><strong style="color:var(--green)">✅ Good Buys</strong><br/><span style="font-size:0.78rem;color:var(--text3)">Assembled PCs · Monitors · Peripherals · Networking · Printers · UPS</span></div>
+          <div class="c2" style="background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.2)"><strong style="color:var(--purple)">💡 Kolkata Tip</strong><br/><span style="font-size:0.78rem;color:var(--text3)">For GPU/CPU, Amazon + Flipkart are often better priced. Visit market for monitors, peripherals, and assembled systems</span></div>
+        </div>
+      </div>
+      <div class="shops-list">
+        <div class="shop-card verified"><div class="verified-badge">✓ WELL KNOWN</div><div class="shop-name">Techno Craft</div><div class="shop-loc">Chandni Chowk, Kolkata</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Custom Builds</span><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">All Parts</span></div><div class="shop-note">Known for custom PC assembly. Bring your parts list and negotiate a build + assembly package.</div></div>
+        <div class="shop-card"><div class="shop-name">Park Street Area Stores</div><div class="shop-loc">Park Street / Esplanade, Kolkata</div><div class="shop-tags"><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">Peripherals</span><span class="shop-tag" style="background:rgba(139,92,246,0.1);color:var(--purple)">Accessories</span></div><div class="shop-note">Gaming peripherals, monitors, and accessories at good prices near Park Street area.</div></div>
+      </div>
+    </div>
+
+    <!-- Online Stores -->
+    <div style="margin-top:2rem">
+      <div class="sec-tag" style="margin-bottom:1rem">TRUSTED ONLINE STORES</div>
+      <div class="online-grid">
+        <div class="online-card" style="border-color:var(--orange,#f90)"><div class="online-name">Amazon India</div><div class="online-url">amazon.in</div><div class="online-tags"><span class="shop-tag" style="background:rgba(245,158,11,0.1);color:var(--yellow)">Prime Delivery</span><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Easy Returns</span></div><div class="online-note">Best for GPU, CPU, RAM with same/next-day delivery. Lightning deals often beat local prices.</div></div>
+        <div class="online-card"><div class="online-name">Flipkart</div><div class="online-url">flipkart.com</div><div class="online-tags"><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">BB Sales</span><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Assured</span></div><div class="online-note">Big Billion Days sales — massive GPU/CPU discounts. SuperCoins cashback on Axis/HDFC cards.</div></div>
+        <div class="online-card" style="border-color:var(--blue)"><div class="online-name">MDComputers</div><div class="online-url">mdcomputers.in</div><div class="online-tags"><span class="shop-tag" style="background:rgba(59,130,246,0.1);color:var(--blue)">PC Specialist</span><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Genuine</span></div><div class="online-note">India's best dedicated PC hardware store. Expert staff, genuine products, ships PAN India.</div></div>
+        <div class="online-card" style="border-color:var(--accent)"><div class="online-name">Vedant Computers</div><div class="online-url">vedantcomputers.com</div><div class="online-tags"><span class="shop-tag" style="background:rgba(255,87,34,0.1);color:var(--accent)">Surat Based</span><span class="shop-tag" style="background:rgba(34,197,94,0.1);color:var(--green)">Competitive</span></div><div class="online-note">Very competitive pricing on components. Good for AMD builds. Known for quick dispatch.</div></div>
+        <div class="online-card"><div class="online-name">Primeabgb</div><div class="online-url">primeabgb.com</div><div class="online-tags"><span class="shop-tag" style="background:rgba(139,92,246,0.1);color:var(--purple)">Mumbai Based</span></div><div class="online-note">Mumbai's well-known online store. Good for Intel products and monitors.</div></div>
+        <div class="online-card"><div class="online-name">EliteHubs</div><div class="online-url">elitehubs.com</div><div class="online-tags"><span class="shop-tag" style="background:rgba(20,184,166,0.1);color:var(--teal)">Gaming Focus</span></div><div class="online-note">Gaming-focused components and peripherals. Good for RGB builds and gaming chairs.</div></div>
+      </div>
+    </div>
+    <div class="infobox warn"><strong>⚠️ Buying Tips for All Markets:</strong> Always ask for <strong>GST bill/invoice</strong> — mandatory for warranty claims. Compare price on Amazon.in before visiting any market. <strong>Never pay full price</strong> without negotiating. Test components before leaving the shop if possible. Avoid "too good to be true" prices on GPU — likely mining-used or fake.</div>
+  </div>
+</div>
+
+<!-- ══════════════ ASSEMBLY STEPS ══════════════ -->
+<div class="comp-section" id="assemble">
+  <div class="sec-wrap reveal">
+    <div class="sec-tag">BUILD GUIDE</div>
+    <div class="sec-title">Assembly — <span class="hl">Step by Step</span></div>
+    <p class="sec-sub">First-time builder? Follow these steps exactly. Take your time — rushing causes bent pins and lost screws.</p>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Prepare Your Workspace</h4>
+          <p>Clear a large, flat, non-static surface. Remove carpet if possible. Touch your PC case metal to discharge static. Gather all tools: Phillips #2 screwdriver, thermal paste (if not pre-applied), zip ties.</p>
+          <span class="tip">⚡ Anti-static wristband ₹150–₹300 — optional but recommended for first build</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Install CPU onto Motherboard</h4>
+          <p>Open the CPU socket lever. Align the gold triangle on CPU with the triangle on the socket. Drop in gently — ZERO force needed. Lower the lever to lock. For Intel LGA: align notches. For AMD AM4/AM5: align triangle. CPU should seat with no pressure.</p>
+          <span class="tip">⚠️ NEVER force the CPU — bent pins = dead motherboard. If it doesn't drop in easily, re-align.</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Apply Thermal Paste + Install CPU Cooler</h4>
+          <p>If your cooler has pre-applied paste (grey pad on bottom), skip this. Otherwise apply a pea-sized dot of thermal paste in the center of the CPU. Mount cooler per its instructions — usually 4 screws in an X pattern. Don't overtighten.</p>
+          <span class="tip">💡 Cooler Master Hyper 212 (₹2,200) or Deepcool AK400 (₹2,800) — excellent budget air coolers</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Install RAM</h4>
+          <p>Check your motherboard manual for dual-channel slots (usually A2 + B2, or slot 2 + slot 4). Open both clips on the slot. Align the RAM notch with the slot notch. Press down firmly with both thumbs until you hear a click. Both clips should snap closed.</p>
+          <span class="tip">💡 Wrong slot = single channel mode = ~20% slower performance</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>Install M.2 NVMe SSD</h4>
+          <p>Find the M.2 slot on your motherboard. Remove the tiny standoff screw. Insert the SSD at 30° angle, slide in fully, then press down flat and secure with the screw. Some boards have a heatsink — reattach it. This is the one screw you really don't want to lose.</p>
+          <span class="tip">⚠️ Check M.2 slot position — some boards have the slot under the GPU, making it hard to install later</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <h4>Install I/O Shield + Mount Motherboard in Case</h4>
+          <p>Snap the I/O shield (the metal plate with port cutouts) into the back of the case — it clicks in from inside. Install brass standoffs in the correct holes for your motherboard size. Lower motherboard in, align with standoffs and I/O shield, then screw down. Don't overtighten — finger tight + quarter turn is enough.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <h4>Install PSU and Connect Power Cables</h4>
+          <p>Mount PSU in the bottom of the case (fan facing down/towards vent). Connect: 24-pin main ATX power (large connector, left side of board), 8-pin CPU power (top-left corner of board — critical!), SATA power for any drives. Route cables through grommets.</p>
+          <span class="tip">⚠️ Forgot the 8-pin CPU cable = PC won't power on. Most common first-builder mistake!</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">8</div>
+        <div class="step-content">
+          <h4>Install GPU (if using dedicated graphics)</h4>
+          <p>Remove the PCIe slot covers from the back of the case. Push GPU into the top PCIe x16 slot until you hear a click. Screw in the bracket at the back. Connect 6+2 pin power cables from PSU. Most RTX 4060s need 1×8-pin; RTX 4070+ needs 2×8-pin.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">9</div>
+        <div class="step-content">
+          <h4>Connect Case Cables + Install Fans</h4>
+          <p>Front panel connectors (Power SW, Reset SW, HDD LED, Power LED) — check motherboard manual for pin layout. USB 3.0 header (big blue connector) and USB 2.0 headers. Audio header. Fan connectors go to SYS_FAN headers on motherboard.</p>
+          <span class="tip">💡 Front panel pins are fiddly — use tweezers. Even wrong orientation of some pins won't damage anything</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">10</div>
+        <div class="step-content">
+          <h4>First Boot — BIOS Check</h4>
+          <p>Connect monitor to GPU (not motherboard if using dedicated GPU). Power on. You should see the BIOS screen. Verify: all RAM detected at correct amount. Go to Memory settings, enable XMP (Intel) or EXPO (AMD) for rated RAM speed. Check all drives detected. Save and exit.</p>
+          <span class="tip">⚠️ No display? Check: monitor connected to GPU not mobo, 8-pin CPU power connected, RAM fully seated, GPU power connected</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">11</div>
+        <div class="step-content">
+          <h4>Install Windows / Linux</h4>
+          <p>Create bootable USB (8GB+) using: Windows — Microsoft Media Creation Tool (free, official). Linux — Balena Etcher + ISO. In BIOS, set boot priority to USB. Follow on-screen installation. Install GPU drivers (NVIDIA/AMD) after OS is ready.</p>
+          <span class="tip">💡 Windows 11 Home = ₹0 (functional without activation for years) or buy key from Microsoft Store ₹7,999</span>
+        </div>
+      </div>
+    </div>
+    <div class="infobox tip"><strong>🎉 You're Done!</strong> After OS install, download GPU drivers (nvidia.com / amd.com), run Windows Update, and test your build with <strong>Cinebench R23</strong> (CPU), <strong>FurMark</strong> (GPU stress test), and <strong>HWMonitor</strong> to check temperatures. Under load: CPU should be under 85°C, GPU under 83°C.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">PC<span class="hi">Banao</span>.in 🇮🇳</div>
+    <p class="footer-sub">India's most comprehensive PC building guide — updated for 2025<br/>Prices change daily — always cross-check on Amazon.in, Flipkart, and MDComputers.in before buying</p>
+    <div class="footer-links">
+      <a href="#builder">PC Builder</a>
+      <a href="#cpu">CPU</a>
+      <a href="#gpu">GPU</a>
+      <a href="#ram">RAM</a>
+      <a href="#storage">Storage</a>
+      <a href="#motherboard">Motherboard</a>
+      <a href="#psu">PSU</a>
+      <a href="#cabinet">Cabinet</a>
+      <a href="#shops">Shops</a>
+      <a href="#assemble">Assembly</a>
+    </div>
+    <p class="footer-disc">Educational guide only. No brand promotion, no affiliate links. All prices are approximate India market 2025 estimates — actual prices vary by vendor and date. Always verify before purchasing. Not responsible for pricing discrepancies.</p>
+  </div>
+</footer>
+
+<script>
+// ── QUIZ ENGINE ──
+const answers = {};
+let step = 1;
+const totalSteps = 4;
+
+function sel(el, key, val) {
+  document.querySelectorAll(`.qopt`).forEach(o => {
+    if (o.closest(`#qs${step}`)) o.classList.remove('sel');
+  });
+  el.classList.add('sel');
+  answers[key] = val;
+}
+
+function nextStep() {
+  const keys = ['use','budget','brand','gpu'];
+  const key = keys[step-1];
+  if (!answers[key]) {
+    const opts = document.querySelectorAll(`#qs${step} .qopt`);
+    opts.forEach(o => { o.style.borderColor='var(--accent)'; setTimeout(()=>o.style.borderColor='',600); });
+    return;
+  }
+  if (step < totalSteps) {
+    document.getElementById(`qs${step}`).classList.remove('active');
+    step++;
+    document.getElementById(`qs${step}`).classList.add('active');
+    document.getElementById('qbar').style.width = (step/totalSteps*100)+'%';
+    document.getElementById('prevBtn').style.display = 'flex';
+    updateInds();
+    if (step === totalSteps) document.getElementById('nextBtn').textContent = 'Build My PC →';
+  } else {
+    showResult();
+  }
+}
+
+function prevStep() {
+  if (step > 1) {
+    document.getElementById(`qs${step}`).classList.remove('active');
+    step--;
+    document.getElementById(`qs${step}`).classList.add('active');
+    document.getElementById('qbar').style.width = (step/totalSteps*100)+'%';
+    if (step === 1) document.getElementById('prevBtn').style.display = 'none';
+    document.getElementById('nextBtn').textContent = step === totalSteps ? 'Build My PC →' : 'Next →';
+    updateInds();
+  }
+}
+
+function updateInds() {
+  for (let i = 0; i < 4; i++) {
+    const el = document.getElementById('si'+i);
+    el.className = 'sind' + (i < step-1 ? ' done' : i === step-1 ? ' active' : '');
+  }
+}
+
+function showResult() {
+  document.getElementById('qbar').style.width = '100%';
+  for (let i = 1; i <= totalSteps; i++) document.getElementById(`qs${i}`).classList.remove('active');
+  document.querySelector('.quiz-nav').style.display = 'none';
+  const result = document.getElementById('buildResult');
+  result.classList.add('show');
+
+  const builds = getBuild();
+  document.getElementById('result-badge').textContent = builds.badge;
+  document.getElementById('result-badge').style.background = builds.color;
+  document.getElementById('result-tagline').textContent = builds.tagline;
+  document.getElementById('result-price').textContent = builds.total;
+  document.getElementById('result-notes').innerHTML = builds.notes;
+
+  const grid = document.getElementById('parts-grid');
+  grid.innerHTML = '';
+  builds.parts.forEach(p => {
+    grid.innerHTML += `
+      <div class="part-row">
+        <div class="part-cat">${p.cat}</div>
+        <div><div class="part-name">${p.name}</div><div class="part-why">${p.why}</div></div>
+        <div class="part-price">${p.price}</div>
+      </div>`;
+  });
+}
+
+function getBuild() {
+  const { use, budget, brand, gpu: gpuChoice } = answers;
+  const wantsGPU = gpuChoice === 'yes' || gpuChoice === 'later';
+  const needsGPU = gpuChoice === 'yes';
+
+  // Determine build profile
+  let profile = '';
+  if (budget === '25-40k') profile = 'entry';
+  else if (budget === '40-65k') profile = 'mid';
+  else if (budget === '65-1L') profile = 'high';
+  else profile = 'ultra';
+
+  const builds = {
+    entry: {
+      intel_igpu: {
+        badge:'Entry Build', color:'#22C55E', tagline:`Office / Study / Coding — ₹28,000–₹38,000 approx`,
+        total:'~₹30,000–₹38,000',
+        parts:[
+          {cat:'CPU',name:'Intel Core i3-14100',why:'4C/8T · iGPU included · Great for office + coding',price:'₹9,500–₹12,000'},
+          {cat:'Motherboard',name:'H610 Motherboard (DDR4)',why:'Budget board · Asus Prime H610M / MSI PRO H610M',price:'₹7,500–₹9,000'},
+          {cat:'RAM',name:'16GB DDR4 3200MHz (2×8GB)',why:'Dual channel · Kingston / Corsair Vengeance',price:'₹2,200–₹3,200'},
+          {cat:'Storage',name:'512GB NVMe PCIe 3.0 M.2',why:'WD Blue SN570 / Kingston NV2 — fast boot',price:'₹3,200–₹4,500'},
+          {cat:'PSU',name:'450W 80+ Bronze',why:'Corsair CV450 / Antec NE450 — sufficient without GPU',price:'₹2,500–₹4,000'},
+          {cat:'Cabinet',name:'mATX Mid Tower',why:'Deepcool Matrexx 40 / Ant Esports ICE-100',price:'₹2,000–₹3,500'},
+        ],
+        notes:'<strong>💡 Best for:</strong> Students, teachers, office workers, coders. Intel UHD 730 iGPU handles 4K display output, video calls, and light Photoshop. <strong>Upgrade path:</strong> Add any PCIe GPU in the future without changing anything else.'
+      },
+      amd_igpu: {
+        badge:'Entry Build', color:'#22C55E', tagline:`Best Budget Choice — AMD iGPU powerhouse`,
+        total:'~₹28,000–₹37,000',
+        parts:[
+          {cat:'CPU',name:'AMD Ryzen 5 5600G',why:'6C/12T · Vega 7 iGPU — strongest budget iGPU in India',price:'₹11,000–₹13,500'},
+          {cat:'Motherboard',name:'B550 AM4 Motherboard',why:'MSI MAG B550M Mortar / Asus ROG Strix B550-F',price:'₹8,500–₹13,000'},
+          {cat:'RAM',name:'16GB DDR4 3200MHz (2×8GB)',why:'Dual channel · crucial for iGPU performance',price:'₹2,200–₹3,200'},
+          {cat:'Storage',name:'512GB NVMe PCIe 3.0',why:'WD Blue SN570 — excellent for the price',price:'₹3,200–₹4,500'},
+          {cat:'PSU',name:'450W 80+ Bronze',why:'CoolerMaster MWE 450 / Corsair CV450',price:'₹2,500–₹3,800'},
+          {cat:'Cabinet',name:'mATX Mid Tower Mesh',why:'Deepcool Matrexx 40 / Ant Esports ICE-100',price:'₹2,000–₹3,500'},
+        ],
+        notes:'<strong>💡 Ryzen 5 5600G advantage:</strong> Radeon Vega 7 iGPU is 2–3× faster than Intel UHD for graphics tasks. Can play light games at 720p. <strong>Pro tip:</strong> Fast DDR4 RAM (3200–3600MHz) significantly boosts iGPU performance. Enable EXPO in BIOS!'
+      },
+      gpu_entry: {
+        badge:'Entry Gaming', color:'#3B82F6', tagline:`Budget gaming rig with dedicated GPU`,
+        total:'~₹35,000–₹48,000',
+        parts:[
+          {cat:'CPU',name:'Ryzen 5 5600 / i3-14100F',why:'6C/12T · Great gaming CPU at budget price',price:'₹11,000–₹13,000'},
+          {cat:'Motherboard',name:'B550 (AMD) / B760 (Intel)',why:'Good feature set for the price',price:'₹8,500–₹12,000'},
+          {cat:'RAM',name:'16GB DDR4 3200MHz',why:'Dual channel essential for gaming',price:'₹2,200–₹3,200'},
+          {cat:'Storage',name:'512GB NVMe PCIe 3.0',why:'Fast boot + enough for OS + a few games',price:'₹3,200–₹4,500'},
+          {cat:'GPU',name:'RX 6600 8GB / RX 6650 XT',why:'Excellent 1080p gaming — FSR support',price:'₹18,000–₹24,000'},
+          {cat:'PSU',name:'550W 80+ Bronze/Gold',why:'Corsair CV550 / CoolerMaster MWE 550',price:'₹3,500–₹5,500'},
+          {cat:'Cabinet',name:'mATX Mid Tower Mesh',why:'Good airflow for GPU cooling',price:'₹2,000–₹3,500'},
+        ],
+        notes:'<strong>🎮 Gaming at 1080p:</strong> RX 6600 handles all 2024 titles at 1080p High settings. AMD FSR makes games look great even at lower resolutions. <strong>Game Pass / Xbox:</strong> PC Game Pass (₹489/month) is the best value in gaming — access 400+ titles.'
+      }
+    },
+    mid: {
+      intel: {
+        badge:'Mid-Range Build', color:'#3B82F6', tagline:`Sweet-spot Intel gaming + productivity build`,
+        total:'~₹50,000–₹68,000',
+        parts:[
+          {cat:'CPU',name:'Intel Core i5-13400F / i5-14400F',why:'10C/16T · Best value gaming CPU · No iGPU (needs GPU)',price:'₹16,000–₹20,500'},
+          {cat:'Motherboard',name:'B760 DDR5 Motherboard',why:'Asus Prime B760M-A / MSI PRO B760M-A WiFi',price:'₹11,000–₹15,000'},
+          {cat:'RAM',name:'16GB DDR5 5200MHz (2×8GB)',why:'Future-proof · Corsair Vengeance DDR5 / G.Skill Ripjaws',price:'₹3,800–₹5,500'},
+          {cat:'Storage',name:'1TB NVMe PCIe Gen4',why:'WD Black SN770 / Samsung 980 — fast load times',price:'₹5,000–₹7,500'},
+          {cat:'GPU',name:'RTX 4060 8GB',why:'DLSS 3 · Frame Gen · Best 1080p card · Low power 115W',price:'₹26,000–₹32,000'},
+          {cat:'PSU',name:'650W 80+ Gold',why:'Corsair RM650 / Seasonic Focus Gold — reliable, quiet',price:'₹5,500–₹8,500'},
+          {cat:'Cabinet',name:'ATX Mid Tower Mesh',why:'Lian Li Lancool 216 / Corsair 4000D Airflow',price:'₹4,500–₹8,000'},
+        ],
+        notes:'<strong>🎮 Performance:</strong> 1080p Ultra @ 100+ fps in most AAA titles. 1440p High @ 60–80 fps. DLSS 3 and Frame Generation push fps even higher. <strong>Upgrade path:</strong> This i5 + DDR5 platform can handle an RTX 5070 in 2026-27 without any other changes.'
+      },
+      amd: {
+        badge:'Mid-Range Build', color:'#EF4444', tagline:`Ryzen 5 powerhouse — best cores per rupee`,
+        total:'~₹48,000–₹65,000',
+        parts:[
+          {cat:'CPU',name:'AMD Ryzen 5 5600X / 7600',why:'6C/12T · Excellent multi-core · AM4 = budget boards',price:'₹13,500–₹20,000'},
+          {cat:'Motherboard',name:'B550 (AM4) / B650 (AM5)',why:'Good PCIe 4.0 support · MSI MAG B550 Tomahawk',price:'₹10,000–₹18,000'},
+          {cat:'RAM',name:'16GB DDR4 3600MHz (AM4) / DDR5 5600MHz (AM5)',why:'Dual channel · Corsair Vengeance Pro',price:'₹2,800–₹5,500'},
+          {cat:'Storage',name:'1TB NVMe PCIe Gen4',why:'Kingston Fury Renegade / WD Black SN850X',price:'₹5,000–₹8,000'},
+          {cat:'GPU',name:'RTX 4060 8GB / RX 7600 8GB',why:'RTX 4060 for DLSS · RX 7600 for pure rasterization value',price:'₹24,000–₹32,000'},
+          {cat:'PSU',name:'650W 80+ Gold',why:'Seasonic Focus Gold 650 / Corsair RM650',price:'₹5,500–₹8,500'},
+          {cat:'Cabinet',name:'ATX Mid Tower Mesh',why:'Fractal Meshify C / Antec P120 Crystal',price:'₹4,000–₹7,500'},
+        ],
+        notes:'<strong>🎯 AMD Advantage:</strong> Ryzen 5 5600X beats Intel i5 in multi-threaded workloads (video editing, 3D rendering) at similar price. AM4 platform is mature — huge selection of affordable B550 boards. <strong>Content creation:</strong> Premiere Pro + Blender will run excellently.'
+      }
+    },
+    high: {
+      intel: {
+        badge:'High-End Build', color:'#F59E0B', tagline:`Powerful Intel creator + gaming beast`,
+        total:'~₹75,000–₹1,05,000',
+        parts:[
+          {cat:'CPU',name:'Intel Core i7-14700 / i7-14700K',why:'20C/28T · Hybrid cores · iGPU UHD 770 included',price:'₹28,000–₹38,000'},
+          {cat:'Motherboard',name:'Z790 / B760 DDR5',why:'Z790 for OC · MSI MAG Z790 Tomahawk / Asus ROG Z790-H',price:'₹15,000–₹30,000'},
+          {cat:'RAM',name:'32GB DDR5 5600MHz (2×16GB)',why:'Future-proof · G.Skill Trident Z5 / Corsair Dominator',price:'₹7,000–₹12,000'},
+          {cat:'Storage',name:'1TB NVMe Gen4 (OS) + 2TB Gen4',why:'WD Black SN850X + Seagate Barracuda 2TB backup',price:'₹8,000–₹15,000'},
+          {cat:'GPU',name:'RTX 4070 12GB / RTX 4070 Ti 16GB',why:'1440p Ultra gaming · DLSS 3 · NVENC streaming',price:'₹45,000–₹70,000'},
+          {cat:'PSU',name:'850W 80+ Gold',why:'Corsair RM850x / Seasonic Prime Gold 850W',price:'₹8,000–₹13,000'},
+          {cat:'Cabinet',name:'ATX Mid Tower Premium Mesh',why:'Lian Li O11 Air / Fractal Torrent / Corsair 5000D Airflow',price:'₹7,000–₹15,000'},
+        ],
+        notes:'<strong>💪 This builds handles:</strong> 4K gaming at 60fps, 1440p Ultra at 120fps, 4K video editing in Premiere Pro, AI/ML with local models (Ollama), 3D in Blender, streaming + gaming simultaneously. <strong>Warranty tip:</strong> Buy all parts from MDComputers.in or Amazon.in for easy warranty claims.'
+      },
+      amd: {
+        badge:'High-End AMD Build', color:'#F59E0B', tagline:`Ryzen 7 powerhouse — creator's dream machine`,
+        total:'~₹72,000–₹1,00,000',
+        parts:[
+          {cat:'CPU',name:'AMD Ryzen 7 7700X / 7800X3D',why:'8C/16T · 7800X3D = world\'s best gaming CPU (3D V-Cache)',price:'₹26,000–₹36,000'},
+          {cat:'Motherboard',name:'B650E / X670 AM5',why:'Asus ROG Strix B650E-E / MSI MEG X670E ACE',price:'₹18,000–₹35,000'},
+          {cat:'RAM',name:'32GB DDR5 6000MHz (2×16GB)',why:'DDR5-6000 is sweet spot for Ryzen 7000 — Expo tuned',price:'₹7,500–₹13,000'},
+          {cat:'Storage',name:'1TB NVMe Gen5 / 2TB Gen4',why:'Seagate FireCuda 530 / WD Black SN850X',price:'₹9,000–₹16,000'},
+          {cat:'GPU',name:'RX 7900 GRE 16GB / RTX 4070 12GB',why:'RX 7900 GRE = incredible 1440p/4K value · 16GB VRAM',price:'₹45,000–₹65,000'},
+          {cat:'PSU',name:'850W 80+ Gold',why:'Corsair RM850x — fully modular, quiet, reliable',price:'₹8,000–₹13,000'},
+          {cat:'Cabinet',name:'Premium ATX Mesh Tower',why:'Lian Li O11 Dynamic / Fractal Torrent',price:'₹7,000–₹15,000'},
+        ],
+        notes:'<strong>🏆 Ryzen 7800X3D</strong> is currently the world\'s fastest gaming CPU due to AMD 3D V-Cache technology. Pair with RX 7900 GRE for an all-AMD ecosystem. <strong>Content creation:</strong> Ryzen 7000 absolutely dominates in Blender, Premiere Pro, and DaVinci Resolve rendering.'
+      }
+    },
+    ultra: {
+      any: {
+        badge:'Workstation / Enthusiast', color:'#8B5CF6', tagline:`No compromises — maximum performance build`,
+        total:'~₹1,20,000–₹2,00,000+',
+        parts:[
+          {cat:'CPU',name:'Intel i9-14900K / AMD Ryzen 9 7950X',why:'24C/32T · Maximum multi-core · Content creation monster',price:'₹48,000–₹75,000'},
+          {cat:'Motherboard',name:'Z790 / X670E Premium',why:'Asus ROG Maximus Z790 / MSI MEG X670E ACE',price:'₹25,000–₹55,000'},
+          {cat:'RAM',name:'64GB DDR5 6400MHz (2×32GB)',why:'AI/ML + video editing + heavy multitasking',price:'₹16,000–₹28,000'},
+          {cat:'Storage',name:'2TB NVMe Gen5 + 4TB HDD',why:'Blazing fast primary + bulk storage',price:'₹15,000–₹25,000'},
+          {cat:'GPU',name:'RTX 4080 16GB / RTX 4090 24GB',why:'4K gaming + CUDA for AI/ML + 8K video editing',price:'₹90,000–₹1,80,000'},
+          {cat:'PSU',name:'1000W 80+ Platinum',why:'Seasonic Prime Platinum 1000W — future GPU-proof',price:'₹12,000–₹22,000'},
+          {cat:'Cooling',name:'360mm AIO Liquid Cooler',why:'Corsair H150i / Noctua NH-D15 for extreme thermals',price:'₹8,000–₹18,000'},
+          {cat:'Cabinet',name:'Full Tower Premium',why:'Lian Li O11 Dynamic XL / Phanteks Enthoo 719',price:'₹10,000–₹25,000'},
+        ],
+        notes:'<strong>🔬 Use case:</strong> Professional AI/ML, 8K video editing, 3D animation, game development, scientific computing. <strong>Local LLM:</strong> RTX 4090 (24GB VRAM) can run 70B parameter models locally with Ollama. <strong>Import note:</strong> RTX 4090 is ~₹1.6–1.8L in India — buy from authorized importers only for warranty.'
+      }
+    }
+  };
+
+  // Build selection logic
+  let selected;
+  const needsiGPU = gpuChoice === 'igpu';
+  const wantsAMD = brand === 'amd' || (brand === 'no' && (use === 'content' || use === 'coding'));
+  const wantsIntel = brand === 'intel' || (brand === 'no' && use === 'gaming');
+
+  if (profile === 'entry') {
+    if (needsiGPU || gpuChoice === 'later') {
+      selected = wantsIntel ? builds.entry.intel_igpu : builds.entry.amd_igpu;
+    } else {
+      selected = builds.entry.gpu_entry;
+    }
+  } else if (profile === 'mid') {
+    selected = wantsAMD ? builds.mid.amd : builds.mid.intel;
+  } else if (profile === 'high') {
+    selected = wantsAMD ? builds.high.amd : builds.high.intel;
+  } else {
+    selected = builds.ultra.any;
+  }
+
+  return selected;
+}
+
+function resetQuiz() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  step = 1;
+  document.getElementById('buildResult').classList.remove('show');
+  document.querySelector('.quiz-nav').style.display = '';
+  document.getElementById('nextBtn').textContent = 'Next →';
+  document.getElementById('prevBtn').style.display = 'none';
+  document.getElementById('qbar').style.width = '25%';
+  for (let i = 1; i <= totalSteps; i++) {
+    const s = document.getElementById(`qs${i}`);
+    s.classList.remove('active');
+    if (i === 1) s.classList.add('active');
+    s.querySelectorAll('.qopt').forEach(o => o.classList.remove('sel'));
+  }
+  updateInds();
+}
+
+// ── MOTHERBOARD TABS ──
+function mbSwitch(id, el) {
+  document.querySelectorAll('.mb-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.mb-panel').forEach(p => p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('mb-'+id).classList.add('on');
+}
+
+// ── CITY TABS ──
+function showCity(city, el) {
+  document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.city-panel').forEach(p => p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('city-'+city).classList.add('on');
+}
+
+// ── SMOOTH SCROLL ──
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1, rootMargin: '0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
